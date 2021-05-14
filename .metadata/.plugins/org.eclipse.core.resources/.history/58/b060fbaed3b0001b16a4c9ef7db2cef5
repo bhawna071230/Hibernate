@@ -1,0 +1,7 @@
+package com.example.demm;
+
+public class Automobile {
+	private String name;
+	private Vehicle vehicle;
+
+}

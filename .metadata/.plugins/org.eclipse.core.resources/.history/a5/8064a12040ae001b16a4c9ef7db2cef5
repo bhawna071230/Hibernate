@@ -1,0 +1,62 @@
+package com.example.demm;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
+@EntityScan
+@Table(name = "tbl_product")
+public class Product {
+	
+	
+	
+	@JsonView(Views.Internal.class)
+	int id;
+	
+	@JsonView({Views.Internal.class,Views.External.class})
+	String name;
+	
+//	@JsonView({Views.Internal.class,Views.External.class})
+	
+	
+	
+	@JsonIgnore
+	Float cost;
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Float getCost() {
+		return cost;
+	}
+
+	public void setCost(Float cost) {
+		this.cost = cost;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

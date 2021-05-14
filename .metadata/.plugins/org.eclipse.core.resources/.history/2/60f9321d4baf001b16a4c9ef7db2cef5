@@ -1,0 +1,27 @@
+package com.example.demm;
+
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+public enum Sub {
+	
+	 PHYSICS("physics"), MATHS("maths"), CHEMISTRY("chemistry") , @JsonEnumDefaultValue UNKNOWN("unknown");
+	private String value;
+	
+	Sub (String value){
+		this.value = value;
+	}
+	@JsonValue  //Before using annotation jsonvalue the sub is acceptng only enum TYPE NOT THE ENUM VALUE SO after applying jsonvalue its accepting enum value.
+	public String value()
+	{
+		return value;
+	}
+	public static Sub fromValue(String value ) {
+		for(Sub type:Sub.values()) {
+			if(type.value.equals(value)) {
+				return type;
+			}
+		}
+		return null;
+	}
+}

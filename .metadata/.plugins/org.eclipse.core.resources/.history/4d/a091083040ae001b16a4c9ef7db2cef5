@@ -1,0 +1,10 @@
+package com.test.entities;
+
+public class Views {
+	
+	
+	public class External{}
+	
+	public class Internal{}
+
+}

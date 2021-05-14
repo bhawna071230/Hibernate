@@ -1,0 +1,30 @@
+package com.example.demm;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/topic")
+public class ontroller {
+
+	@PostMapping
+	public Topic tp(@RequestBody Topic topic) {
+		topic.setAddress("{\"doorNumber\": 1118, \"street\": \"IDPL Colony\", " + "\"city\":          \"Hyderabad\"}");
+        Map<String,String> temp = new HashMap<>();
+        temp.put("col1", "red");
+        temp.put("col2", "blue");
+        temp.put("col3", "green");
+        topic.setColour(temp);
+		return topic;
+
+	}
+	@PostMapping("/auto")
+	public Automobile auto(@RequestBody Automobile auto) {
+		return auto;
+	}
+}

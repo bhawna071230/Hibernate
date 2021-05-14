@@ -1,0 +1,119 @@
+package com.example.demm;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRawValue;
+import com.fasterxml.jackson.annotation.JsonSetter;
+//@JsonIgnoreProperties({"name","age"})
+//@JsonPropertyOrder({"name","age","id","sub","description","Address","timestamp"})
+//@JsonInclude(value= Include.NON_EMPTY)
+public class Topic implements  Serializable{
+	//@JsonProperty
+	private String id;
+	 private Sub sub;
+	 @JsonProperty(access= Access.READ_ONLY)
+	 private String age;
+	// @JsonProperty(access= Access.WRITE_ONLY)
+	 private String name;
+	private String description;
+	@JsonRawValue
+	private String Address;
+	private boolean isTopic;
+	private Map<String,String> colour=new HashMap<>();
+	//@JsonFormat(shape= Shape.STRING, pattern="dd-mm-yyyy hh:mm:ss")
+	private Date timestamp;
+	 
+	
+	
+	public Topic(String id, Sub sub, String age, String name, String description, String address, boolean isTopic,
+			Map<String, String> colour, Date timestamp) {
+		super();
+		this.id = id;
+		this.sub = sub;
+		this.age = age;
+		this.name = name;
+		this.description = description;
+		Address = address;
+		this.isTopic = isTopic;
+		this.colour = colour;
+
+		this.timestamp = timestamp;
+	}
+	public Date getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
+	//@JsonAnyGetter
+	public Map<String, String> getColour() {
+		return colour;
+	}
+	public void setColour(Map<String, String> colour) {
+		this.colour = colour;
+	}
+	public boolean isTopic() {
+		return isTopic;
+	}
+	//@JsonSetter("isTopic")
+	public void setTopic(boolean isTopic) {
+		this.isTopic = isTopic;
+	}
+	public String getAddress() {
+		return Address;
+	}
+	public void setAddress(String address) {
+		Address = address;
+	}
+	
+	
+	public Sub getSub() {
+		return sub;
+	}
+	public void setSub(Sub sub) {
+		this.sub = sub;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public Topic() {
+		
+	}
+	
+}
+

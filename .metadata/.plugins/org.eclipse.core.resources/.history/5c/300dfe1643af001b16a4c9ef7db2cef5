@@ -1,0 +1,6 @@
+server:
+ port:8080
+  spring:
+   jackson: 
+    deserialization:
+      read-unknown-enum-value-using-default-value: true

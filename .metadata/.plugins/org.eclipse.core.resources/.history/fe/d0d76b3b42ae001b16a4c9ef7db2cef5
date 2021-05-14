@@ -1,0 +1,9 @@
+package com.example.demm;
+
+
+
+public interface TopicsRepository extends CrudRepository<Topic , String> {
+
+	Topic findAllById(String id);
+
+}

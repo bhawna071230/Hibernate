@@ -1,0 +1,17 @@
+package com.example.demm;
+
+
+
+public interface TopicsRepository extends CrudRepository<Topic , String> {
+
+	Topic findAllById(String id);
+
+	Iterable<Topic> findAll();
+
+	void save(Topic topic);
+
+	void deleteById(String id);
+
+	
+
+}

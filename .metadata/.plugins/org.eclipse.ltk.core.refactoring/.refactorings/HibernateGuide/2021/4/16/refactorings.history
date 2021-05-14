@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;HibernateGuide&apos;&#x0D;&#x0A;- Original project: &apos;HibernateGuide&apos;&#x0D;&#x0A;- Original element: &apos;hconfig.xml&apos;" description="Delete element" element1="src/main/java/com/test/HibernateGuide/hconfig.xml" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1618564180538" subPackages="false" version="1.0"/>
+</session>

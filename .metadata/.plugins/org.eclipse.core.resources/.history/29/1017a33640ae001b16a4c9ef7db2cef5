@@ -1,0 +1,20 @@
+package com.example.demm;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+public class Controller {
+	@JsonView(Views.Internal.class)
+	@RequestMapping("/getdata")
+	public List<Product> getData() {
+		
+		List<Product> myList = gd.getProductList();
+		
+		return myList;
+		
+	}
+
+}

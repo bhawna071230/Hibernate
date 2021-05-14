@@ -1,0 +1,11 @@
+package com.AmqExmple;
+
+import org.springframework.jms.annotation.JmsListener;
+
+public class ConsumerMQ {
+	@JmsListener(destination = "Amq.queue")
+	public void consume(String message) {
+		System.out.println("recieved message:"+ message);
+	}
+
+}
